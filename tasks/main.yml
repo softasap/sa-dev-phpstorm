@@ -1,0 +1,6 @@
+---
+# tasks file for sa-dev-phpstorm
+  - include: tasks_java.yml
+    when: option_install_java
+
+  - include: tasks_jetbrains_phpstorm.yml
