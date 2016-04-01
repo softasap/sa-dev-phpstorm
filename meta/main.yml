@@ -30,8 +30,6 @@ galaxy_info:
     - php
     - ide
     - ubuntu
-  dependencies:
-  - role: Voronenko.developer_recipe
   #platforms:
   #- name: EL
   #  versions:
