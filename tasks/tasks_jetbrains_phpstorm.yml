@@ -20,10 +20,12 @@
       -setup
 
   - name: JetBrains PHPStorm| Download phpStorm archive
-    get_url:
-      url=http://download.jetbrains.com/webide/PhpStorm-{{ phpstorm_version }}.tar.gz
-      dest={{apps_dir}}/phpstorm.tar.gz
-      validate_certs=no
+# until jetbrains sni issue is fixed
+#    get_url:
+#      url=http://download.jetbrains.com/webide/PhpStorm-{{ phpstorm_version }}.tar.gz
+#      dest={{apps_dir}}/phpstorm.tar.gz
+#      validate_certs=no
+    command: curl -o {{apps_dir}}/phpstorm.tar.gz http://download.jetbrains.com/webide/PhpStorm-{{ phpstorm_version }}.tar.gz
     when: phpstorm_exist.stat.exists == False
     tags:
       -jetbrains
