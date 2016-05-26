@@ -23,6 +23,7 @@
     get_url:
       url=http://download.jetbrains.com/webide/PhpStorm-{{ phpstorm_version }}.tar.gz
       dest={{apps_dir}}/phpstorm.tar.gz
+      validate_certs=no
     when: phpstorm_exist.stat.exists == False
     tags:
       -jetbrains
